@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import { Gradient } from "./assets/gradient";
+import Hero from './components/Hero'
+import Generator from "./components/Generator";
+import Recommendation from "./components/Recommendation";
 
 export default function MyComponent() {
     useEffect(() => {
@@ -10,15 +13,15 @@ export default function MyComponent() {
     return (
       <main className="min-h-screen flex flex-col relative bg-slate-900">
       <div className="relative z-10 flex flex-col flex-1 justify-center max-w-6xl p-10">
-         <h1 className="text-7xl font-bold text-white">
-            Woah, look at this whatamesh gradient.
-         </h1>
+         <Hero />
+         <Generator />
+         <Recommendation />
       </div>
       <canvas
          id="gradient-canvas"
          className="fixed inset-0"
          data-transition-in
          />
-   </main>
+      </main>
     );
 }

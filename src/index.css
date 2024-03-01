@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Inconsolata", monospace;
 }
 
 #gradient-canvas {
@@ -15,4 +15,10 @@
   --gradient-color-2: #f7ceb4;
   --gradient-color-3: #f6dfac;
   --gradient-color-4: #ede1a7;
+}
+
+span {
+  font-family: inherit;
+  font-weight: 600;
+  color: #0c4a6e;
 }

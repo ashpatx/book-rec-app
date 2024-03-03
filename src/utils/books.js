@@ -5,7 +5,8 @@
 //each book: title, author, publication date, page number and a short summary
 
 export const BOOKS = {
-    nonFiction: {
+    category: {
+        nonFiction: {
         genre: {
             philosophy: {
                 short: [
@@ -237,6 +238,7 @@ export const BOOKS = {
             }
         }
     },
+},
     fiction: {
         genre: {
             romantic: {

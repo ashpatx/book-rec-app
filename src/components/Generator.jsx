@@ -18,16 +18,28 @@ function Header(props) {
 export default function Generator() {
   return (
     <SectionWrapper header={"find your next read"} title={['Go', 'Back', 'In', 'Time' ]} >
+
+      {/*SECTION 1*/}
       <Header index={'1.'} title={'Category'} description={'Fiction or Non-Fiction?'} />
-      
-      <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
+      <div className='grid grid-cols-2 sm:grid-cols-4 gap-2'>
+
+      {/*SECTION 1:BUTTON OPTIONS*/}
+      {Object.keys(BOOKS).map((category) => (
+        //Render buttons for each genre within the category
+        Object.keys(BOOKS[category]).map((genre, genreIndex) => (
+        <BookCategoryButton key={genreIndex} buttonText={genre} />
+    ))
+            ))}
+      </div>
+
+      <Header index={'1.'} title={'Category'} description={'Fiction or Non-Fiction?'} />
+      <div className='grid grid-cols-2 sm:grid-cols-4 gap-2'>
 
       {/*buttons to select*/}
       {Object.keys(BOOKS).map((type, typeIndex) => (
                 <BookCategoryButton key={typeIndex} buttonText={type} />
             ))}
       </div>
-
     </SectionWrapper>
   )
 }

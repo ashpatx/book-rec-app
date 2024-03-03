@@ -238,7 +238,6 @@ export const BOOKS = {
             }
         }
     },
-},
     fiction: {
         genre: {
             romantic: {
@@ -471,4 +470,5 @@ export const BOOKS = {
             }
         }
     }
+}
 };

@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+// BookCategoryButton.jsx
+import React from 'react';
 
-function BookCategoryButton({ buttonText, onClick }) {
-    const [isSelected, setIsSelected] = useState(false);
-
+function BookCategoryButton({ buttonText, onClick, isSelected }) {
     const handleClick = () => {
-        setIsSelected(!isSelected); // Toggle isSelected state
-        onClick(); // Call the onClick event handler
+        onClick(buttonText); // Pass the buttonText to the parent onClick handler
     };
 
     return (

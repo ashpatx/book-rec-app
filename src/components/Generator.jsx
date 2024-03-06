@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SectionWrapper from './SectionWrapper'
-import { BOOKS, LENGTH } from '../utils/books'
+import { GENRES, BOOKS, LENGTH } from '../utils/books'
 import BookCategoryButton from './BookButton'
 import GoButton from './GoButton'
 
@@ -88,7 +88,7 @@ const [isSelected, setIsSelected] = useState(false);
     ))}
 </div>
 
-    {/*SECTION 2*/}
+{/*SECTION 2*/}
 <Header index={'2.'} title={'Genre'} description={'What do you like to read?'} />
 {/*SECTION 2:BUTTON OPTIONS*/} 
 <div className='rounded-md border border-neutral-700 px-8 py-4'>
@@ -103,18 +103,16 @@ const [isSelected, setIsSelected] = useState(false);
     {showModal && (
         <div className='flex flex-col p-4'>
             {/* Render genre buttons for all categories Fiction and Non Fiction*/}
-            {Object.keys(BOOKS).map((category) => (
-                Object.keys(BOOKS[category]).map((genre, index) => (
-                    <button
-                        key={index}
-                        className={`py-2 cursor-pointer hover:rounded-md hover:border hover:p-2 hover:bg-slate-400/40 ${selectedGenre.includes(genre) ? 'border-2 rounded-md border-black' : ''}`}
-                        onClick={() => {
-                            updateGenre(genre);
-                        }}
-                    >
-                        {genre}
-                    </button>
-                ))
+            {GENRES.map((genre, index) => (
+                <button
+                    key={index}
+                    className={`py-2 cursor-pointer hover:rounded-md hover:border hover:p-2 hover:bg-slate-400/40 ${selectedGenre.includes(genre) ? 'border-2 rounded-md border-black' : ''}`}
+                    onClick={() => {
+                        updateGenre(genre);
+                    }}
+                >
+                    {genre}
+                </button>
             ))}
         </div>
     )}

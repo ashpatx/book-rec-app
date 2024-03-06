@@ -4,6 +4,8 @@
 //third sorted by long or short (page length)
 //each book: title, author, publication date, page number and a short summary
 
+export const GENRES = ['philosophy', 'history', 'biography', 'drama', 'mystery', 'adventure']
+
 export const BOOKS = {
         nonFiction: {
             philosophy: [
@@ -269,10 +271,70 @@ export const BOOKS = {
                     summary: "These journals document the famous expedition to explore the American West, providing insights into the landscapes, peoples, and wildlife encountered during their journey.",
                     pages: "1492"
                 }
-
-            ]
-            },
+            ]},
     fiction: {
+            philosophy: [
+                {
+                    title: "The Stranger",
+                    author: "Camus, Albert",
+                    publicationDate: "1942",
+                    summary: "The novel follows the story of Meursault, an emotionally detached and indifferent man, as he confronts the absurdity of existence.",
+                    pages: "159"
+                },
+                {
+                    title: "The Picture of Dorian Gray",
+                    author: "Wilde, Oscar",
+                    publicationDate: "1890",
+                    summary: "Wilde's novel raises philosophical questions about beauty, morality, and the pursuit of pleasure through the story of Dorian Gray, a man who remains perpetually youthful while his portrait ages and reflects his moral degradation.",
+                    pages: "304"
+                }
+            ],
+            history: [
+                {
+                    title: "War and Peace",
+                    author: "Tolstoy, Leo",
+                    publicationDate: "1869",
+                    summary: "This epic novel follows the lives of several Russian aristocratic families during the Napoleonic Wars, offering a panoramic view of Russian society and historical events.",
+                    pages: "1225"
+                },
+                {
+                    title: "The Last of the Mohicans",
+                    author: "Cooper, James",
+                    publicationDate: "1757",
+                    summary: "Set during the French and Indian War, this adventure novel follows the exploits of Hawkeye and his companions as they navigate the wilderness of colonial America and confront conflicts between Native Americans and European settlers.",
+                    pages: "384"
+                },
+                {
+                    title: "Ben-Hur: A Tale of the Christ",
+                    author: "Wallace, Lew",
+                    publicationDate: "1880",
+                    summary: "Set in Roman-occupied Judea, this historical novel follows the journey of Judah Ben-Hur, a Jewish prince who becomes a slave and seeks revenge against his Roman oppressors, all while encountering Jesus Christ.",
+                    pages: "441"
+                },
+                {
+                    title: "The Scarlet Letter",
+                    author: "Hawthorne, Nathaniel",
+                    publicationDate: "1850",
+                    summary: "Set in 17th-century Puritan Massachusetts, this novel follows the story of Hester Prynne, who is shunned by her community after bearing an illegitimate child, exploring themes of sin, guilt, and redemption.",
+                    pages: "175"
+                }
+            ],
+            biography: [
+                {
+                    title: "The Life and Opinions of Tristram Shandy, Gentleman",
+                    author: "Sterne, Laurence",
+                    publicationDate: "1759",
+                    summary: "Sterne's novel is a fictional autobiography that adopts an unconventional narrative style, incorporating digressions, humor, and metafictional elements to explore the life and opinions of its eccentric protagonist, Tristram Shandy.",
+                    pages: "640"
+                },
+                {
+                    title: "Robinson Crusoe",
+                    author: "Defoe, Daniel",
+                    publicationDate: "1719",
+                    summary: "Defoe's novel is a fictional autobiography that follows the adventures of the eponymous protagonist as he survives shipwreck, solitude, and encounters with indigenous peoples on a remote island.",
+                    pages: "304"
+                }
+            ],
             drama: [
                     {
                         title: "The Fall of the House of Usher",                        

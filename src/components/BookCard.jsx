@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function BookCard({ randomBook }) {
+export default function BookCard({ book }) { // Changed prop name to 'book'
   const { title, author, length, description } = book;
 
   return (

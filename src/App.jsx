@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Gradient } from "./assets/gradient";
-import Hero from './components/Hero'
+import Hero from './components/Hero';
 import Generator from "./components/Generator";
 import Recommendation from "./components/Recommendation";
-import { BOOKS } from "./utils/books";
+import { GENRES, BOOKS, LENGTH } from './utils/books';
 import { generateRecommendation } from "./utils/functions";
 
 export default function App() {
@@ -23,13 +23,28 @@ export default function App() {
             console.log("Selected genre is missing");
             return;
         }
+    
+        console.log("Generating recommendation...");
+    
+        const newRecommendation = generateRecommendation({ selectedCategory, selectedGenre, selectedLength: length });
+        console.log(newRecommendation);
+        setRecommendation([newRecommendation]);
+    }
+
+    {/* OLLLLLDDDD STUFFF
+    function updateRecommendation() {
+        if (selectedGenre.length < 1) {
+            console.log("Selected genre is missing");
+            return;
+        }
 
         console.log("Generating recommendation...");
 
         const newRecommendation = generateRecommendation({ selectedCategory, selectedGenre, length });
         console.log(newRecommendation);
         setRecommendation(newRecommendation);
-    }
+    } 
+*/}
 
     useEffect(() => {
         if (recommendation) {

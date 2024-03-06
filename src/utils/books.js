@@ -7,8 +7,7 @@
 export const BOOKS = {
     
         nonFiction: {
-            philosophy: {
-                short: [
+            philosophy: [
                     {
                         title: "Meditations",
                         author: "Marcus Aurelius",
@@ -43,9 +42,7 @@ export const BOOKS = {
                         publicationDate: "1859",
                         summary: "John Stuart Mill's seminal work advocating for individual liberty and freedom of expression in the face of societal and governmental constraints.",
                         pages: "207"
-                    }
-                ],
-                long: [
+                    },
                     {
                         title: "Being and Time",
                         author: "Heidegger, Martin",
@@ -81,10 +78,8 @@ export const BOOKS = {
                         summary: "Friedrich Nietzsche's philosophical novel presenting the teachings of the fictional prophet Zarathustra on the topics of nihilism, the will to power, and the eternal recurrence.",
                         pages: "335"
                     }
-                ]
-            },
-            history: {
-                short: [
+                ],
+            history: [
                     {
                         title: "The Prince",
                         author: "Machiavelli, Niccolò",
@@ -119,9 +114,7 @@ export const BOOKS = {
                         publicationDate: "1845",
                         summary: "Frederick Douglass' autobiography recounting his journey from slavery to freedom and his relentless fight for abolition and civil rights. Douglass' narrative exposes the brutality of slavery and the resilience of the human spirit.",
                         pages: "154"
-                    }
-                ],
-                long: [
+                    },
                     {
                         title: "The Decline and Fall of the Roman Empire",
                         author: "Gibbon, Edward",
@@ -157,10 +150,8 @@ export const BOOKS = {
                         summary: "Darwin extends evolutionary theory to humans, proposing that humans and apes share a common ancestor and exploring the implications of evolution for human behavior, society, and morality.",
                         pages: "450"
                     }
-                ]
-            },
-            biography: {
-                short: [
+                ],
+            biography: [
                     {
                         title: "Narrative of the Life of Frederick Douglass, an American Slave",
                         author: "Douglass, Frederick",
@@ -195,9 +186,7 @@ export const BOOKS = {
                         publicationDate: "1849",
                         summary: "Henry David Thoreau's reflections on simple living in natural surroundings during his two-year stay at Walden Pond. Thoreau explores themes of self-reliance, individualism, and the pursuit of a meaningful life.",
                         pages: "248"
-                    }
-                ],
-                long: [
+                    },
                     {
                         title: "Letters and Journals of Lord Byron",
                         author: "Moore, Thomas",
@@ -234,11 +223,9 @@ export const BOOKS = {
                         pages: "624"
                     }
                 ]
-            }
-        },
+            },
     fiction: {
-            romantic: {
-                short: [
+            drama: [
                     {
                         title: "The Fall of the House of Usher",                        
                         author: "Allen Poe, Edgar",
@@ -273,9 +260,7 @@ export const BOOKS = {
                         publicationDate: "1817",
                         summary: "A satirical romance novel that follows Catherine Morland, an impressionable young woman who discovers the pitfalls of romantic fantasies. Set in Bath, England, 'Northanger Abbey' humorously parodies the Gothic novels popular during Austen's time.",
                         pages: "272"
-                    }
-                ],
-                long: [
+                    },
                     {
                         title: "Emma",
                         author: "Austen, Jane",
@@ -311,10 +296,8 @@ export const BOOKS = {
                         summary: "A panoramic novel that chronicles the lives of the inhabitants of the fictional town of Middlemarch. Through intertwining storylines, 'Middlemarch' explores themes of love, ambition, and social change in 19th-century England, offering a rich tapestry of characters and relationships.",
                         pages: "848"
                     }
-                ]
-            },
-            mystery: {
-                short: [
+                ],
+            mystery: [
                     {
                         title: "The Murders in the Rue Morgue",
                         author: "Poe, Edgar Allan",
@@ -349,9 +332,7 @@ export const BOOKS = {
                         publicationDate: "1902",
                         summary: "Sherlock Holmes and Dr. John Watson are tasked with investigating the mysterious death of Sir Charles Baskerville, whose demise is attributed to a supernatural hound that haunts the Baskerville family. As they delve deeper into the case, they uncover a web of intrigue and deception surrounding the Baskerville estate.",
                         pages: "256"
-                    }
-                ],
-                long: [
+                    },
                     {
                         title: "The Woman in White",
                         author: "Collins, Wilkie",
@@ -387,10 +368,8 @@ export const BOOKS = {
                         summary: "A compelling tale that delves into themes of deception, betrayal, and family secrets, exploring the complex dynamics within a wealthy and enigmatic household.",
                         pages: "388"
                     }
-                ]
-            },
-            adventure: {
-                short: [
+                ],
+            adventure:[
                     {
                         title: "Gulliver's Travels into Several Remote Nations of the World",
                         author: "Swift, Jonathan",
@@ -425,9 +404,7 @@ export const BOOKS = {
                         publicationDate: "1894",
                         summary: "A collection of stories set in the Indian jungle and centered around Mowgli, a boy raised by wolves. Mowgli interacts with various jungle animals, including Baloo the bear and Bagheera the panther, while facing the challenges of survival and his identity.",
                         pages: "277"
-                    }
-                ],
-                long: [
+                    },
                     {
                         title: "The Count of Monte Cristo",
                         author: "Dumas, Alexandre",
@@ -465,8 +442,7 @@ export const BOOKS = {
                     }
                 ]
             }
-    }
-};
+    };
 
 export const LENGTH = {
     short: [

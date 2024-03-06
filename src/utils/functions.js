@@ -6,41 +6,21 @@ import { BOOKS } from '../utils/books';
  * @param {Object} args - User inputs including selectedCategory, selectedGenre, and length.
  * @returns {Object} - Random book recommendation object.
  */
-export function generateRecommendation(args) {
-    const { selectedCategory, selectedGenre, length } = args;
-
-    // Validate inputs
-    if (!selectedCategory || !selectedGenre || !length) {
-        throw new Error('Missing input parameters');
-    }
-
-    // Check if the selected category and genre exist in the BOOKS dataset
-    if (!BOOKS[selectedCategory] || !BOOKS[selectedCategory][selectedGenre]) {
-        throw new Error('Invalid selectedGenre');
-    }
-
+export function generateRecommendation(selectedCategory, selectedGenre) {
     // Filter books based on selected category and genre
     const filteredBooks = BOOKS[selectedCategory][selectedGenre];
 
-    // Filter books based on length
-    const recommendedBooks = filteredBooks.filter(book => {
-        // Assuming short books have less than or equal to 200 pages
-        // Modify this condition based on your definition of short and long books
-        if (length === 'short') {
-            return parseInt(book.pages) <= 200;
-        } else if (length === 'long') {
-            return parseInt(book.pages) > 200;
-        }
-    });
+    // Filter books based on page count (> 259 pages)
+    const filteredByPageCount = filteredBooks.filter(book => parseInt(book.pages) > 259);
 
-    // Check if any books match the criteria
-    if (recommendedBooks.length === 0) {
-        throw new Error('No books found matching the criteria');
+    // Check if there are any books left after filtering
+    if (filteredByPageCount.length === 0) {
+        throw new Error('No books matching the criteria');
     }
 
     // Select a random book from the filtered list
-    const randomIndex = Math.floor(Math.random() * recommendedBooks.length);
-    const randomBook = recommendedBooks[randomIndex];
+    const randomIndex = Math.floor(Math.random() * filteredByPageCount.length);
+    const randomBook = filteredByPageCount[randomIndex];
 
     return randomBook;
 }

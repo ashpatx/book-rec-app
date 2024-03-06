@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import SectionWrapper from './SectionWrapper'
 import { BOOKS, LENGTH } from '../utils/books'
 import BookCategoryButton from './BookButton'
+import GoButton from './GoButton'
 
 function Header(props) {
     const { index, title, description } = props
@@ -65,7 +66,7 @@ const [isSelected, setIsSelected] = useState(false);
 
 
   return (
-    <SectionWrapper header={"find your next read"} title={['Go', 'Back', 'In', 'Time' ]} >
+    <SectionWrapper header={"Find your next read"} title={['Travel', 'back', 'in', 'time' ]} >
 
       {/*SECTION 1*/}
       <Header index={'1.'} title={'Category'} description={'Fiction or Non-Fiction?'} />
@@ -80,6 +81,7 @@ const [isSelected, setIsSelected] = useState(false);
                 handleCategoryClick(category);
                 setSelectedGenre([]);
                 setSelectedCategory(category); 
+                setIsSelected(true);
             }}
         />
     ))}
@@ -128,12 +130,14 @@ const [isSelected, setIsSelected] = useState(false);
                     onClick={() => {
                         handleLengthClick(lengthType); // Call the handler function with the selected length
                         setLength(lengthType); // Update the length state
+                        setIsSelected(true);
+
         }}
     />
 ))}
             </div>
 
-            <BookCategoryButton  
+            <GoButton  
             func={updateRecommendation}
             buttonText={'Generate'} 
             isSelected={isSelected}

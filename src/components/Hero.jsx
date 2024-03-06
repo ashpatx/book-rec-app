@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import BookCategoryButton from './BookButton'
+import GoButton from './GoButton';
 
 export default function Hero() {
     const [isSelected, setIsSelected] = useState(false);
@@ -16,11 +17,11 @@ export default function Hero() {
             </div>
             <p className='sm:text-xl md:text-2xl lg:text-3xl mb-4'>When was the last time you delved into a tale penned a <span>century ago</span>? Venture into unfamiliar territory and <span>unearth genres</span> yet to be explored. Trust me, nothing will keep you flipping pages quite like a <span>timeless classic</span>.</p>
 
-            <BookCategoryButton  
-            buttonText={'Get Started'}
+            <GoButton  
+            buttonText={'Get Started'} 
             isSelected={isSelected}
             onClick={handleClick}
-        />
+            />
         </div> 
     )
 }

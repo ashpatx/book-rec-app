@@ -16,12 +16,10 @@ function Header(props) {
 }
 
 
-export default function Generator() {
+export default function Generator(props) {
+  const { selectedCategory, setSelectedCategory, selectedGenre, setSelectedGenre, length, setLength, updateRecommendation } = props
 
   const [showModal, setShowModal] = useState(false)
-  const [selectedCategory, setSelectedCategory] = useState('fiction')
-  const [selectedGenre, setSelectedGenre] = useState([])
-  const [length, setLength] = useState('short')
 
   function toggleModal() {
     setShowModal(!showModal)
@@ -56,6 +54,13 @@ export default function Generator() {
 const handleLengthClick = (selectedLength) => {
   setLength(selectedLength); // Update selected length
 };
+
+// Generate Button
+const [isSelected, setIsSelected] = useState(false);
+
+    const handleClick = () => {
+        setIsSelected(!isSelected);
+    };
 
 
 
@@ -97,7 +102,7 @@ const handleLengthClick = (selectedLength) => {
                             Object.keys(BOOKS[category]).map((genre, index) => (
                               <button
                     key={index}
-                    className={`py-2 cursor-pointer hover:bg-gray-400 ${selectedGenre.includes(genre) ? 'border-2 border-black' : ''}`}
+                    className={`py-2 cursor-pointer hover:rounded-md hover:border hover:p-2 hover:bg-slate-400/40 ${selectedGenre.includes(genre) ? 'border-2 rounded-md border-black' : ''}`}
                     onClick={() => {
                         updateGenre(genre);
                     }}
@@ -127,6 +132,14 @@ const handleLengthClick = (selectedLength) => {
     />
 ))}
             </div>
+
+            <BookCategoryButton  
+            func={updateRecommendation}
+            buttonText={'Generate'} 
+            isSelected={isSelected}
+            onClick={handleClick}
+            />
+            
     </SectionWrapper>
   )
 }

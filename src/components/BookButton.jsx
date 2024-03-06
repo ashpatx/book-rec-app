@@ -1,9 +1,8 @@
 import React from 'react';
 
-function BookCategoryButton({ buttonText, onClick, isSelected, func }) {
+function BookCategoryButton({ buttonText, onClick, isSelected }) {
     const handleClick = () => {
         onClick(buttonText); // Pass the buttonText to the parent onClick handler
-        func(); // Call the func function
     };
 
     return (

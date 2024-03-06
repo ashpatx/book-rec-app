@@ -28,25 +28,29 @@ export default function Generator(props) {
 
   //Section 1: Prevent selecting a new category if genres have already been selected
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category); // Update selected category
+    console.log("Selected category:", category);
+    setSelectedCategory(category);
+    setSelectedGenre([]); // Reset selectedGenre when a new category is selected
+    setIsSelected(true);
 };
 
   
   //Section 2: Function to update the selected genre
-  function updateGenre(genre) {
+function updateGenre(genre) {
+  console.log("Selected GENRE:", genre); // Add this line
   // Check if the selected genre already exists in the array
   if (selectedGenre.includes(genre)) {
-    // If so, remove it from the array
-    setSelectedGenre(selectedGenre.filter(item => item !== genre));
+      // If so, remove it from the array
+      setSelectedGenre(prevGenres => prevGenres.filter(item => item !== genre));
   } else {
-    // Otherwise, add it to the array if the length is less than 2
-    if (selectedGenre.length < 2) {
-      setSelectedGenre(prevGenres => [...prevGenres, genre]);
-    }
+      // Otherwise, add it to the array if the length is less than 2
+      if (selectedGenre.length < 2) {
+          setSelectedGenre(prevGenres => [...prevGenres, genre]);
+      }
   }
   // Close the modal if two genres are selected
   if (selectedGenre.length === 2) {
-    setShowModal(false);
+      setShowModal(false);
   }
 }
 
@@ -79,37 +83,36 @@ const [isSelected, setIsSelected] = useState(false);
             isSelected={selectedCategory === category} 
             onClick={() => {
                 handleCategoryClick(category);
-                setSelectedGenre([]);
-                setSelectedCategory(category); 
-                setIsSelected(true);
             }}
         />
     ))}
 </div>
 
     {/*SECTION 2*/}
-      <Header index={'2.'} title={'Genre'} description={'What do you like to read?'} />
-      {/*SECTION 2:BUTTON OPTIONS*/} 
-      <div className='rounded-md border border-neutral-700 px-8 py-4'>
-                <button 
-                onClick={toggleModal} className='relative flex flex-col items-center'>
-                    <p className='capitalize'>{selectedGenre.length === 0 ? 'Select Genre' : selectedGenre.join(" ")}</p>  
-                    <i className="ri-arrow-drop-down-line absolute -right-4 top-1/2 -translate-y-1/2"></i>
-                </button>
-                {/* Modal content */}
-                {showModal && (
-                    <div className='flex flex-col p-4'>
-                        {/* Render genre buttons for all categories Fiction and Non Fiction*/}
-                        {Object.keys(BOOKS).map((category) => (
-                            Object.keys(BOOKS[category]).map((genre, index) => (
-                              <button
-                    key={index}
-                    className={`py-2 cursor-pointer hover:rounded-md hover:border hover:p-2 hover:bg-slate-400/40 ${selectedGenre.includes(genre) ? 'border-2 rounded-md border-black' : ''}`}
-                    onClick={() => {
-                        updateGenre(genre);
-                    }}
+<Header index={'2.'} title={'Genre'} description={'What do you like to read?'} />
+{/*SECTION 2:BUTTON OPTIONS*/} 
+<div className='rounded-md border border-neutral-700 px-8 py-4'>
+    <button 
+        onClick={toggleModal} 
+        className='relative flex flex-col items-center'
+    >
+        <p className='capitalize'>{selectedGenre.length === 0 ? 'Select Genre' : selectedGenre.join(" ")}</p>  
+        <i className="ri-arrow-drop-down-line absolute -right-4 top-1/2 -translate-y-1/2"></i>
+    </button>
+    {/* Modal content */}
+    {showModal && (
+        <div className='flex flex-col p-4'>
+            {/* Render genre buttons for all categories Fiction and Non Fiction*/}
+            {Object.keys(BOOKS).map((category) => (
+                Object.keys(BOOKS[category]).map((genre, index) => (
+                    <button
+                        key={index}
+                        className={`py-2 cursor-pointer hover:rounded-md hover:border hover:p-2 hover:bg-slate-400/40 ${selectedGenre.includes(genre) ? 'border-2 rounded-md border-black' : ''}`}
+                        onClick={() => {
+                            updateGenre(genre);
+                        }}
                     >
-                    {genre}
+                        {genre}
                     </button>
                 ))
             ))}

@@ -5,7 +5,6 @@
 //each book: title, author, publication date, page number and a short summary
 
 export const BOOKS = {
-    
         nonFiction: {
             philosophy: [
                     {
@@ -222,7 +221,56 @@ export const BOOKS = {
                         summary: "Gaskell It provides a detailed biography of the renowned author Charlotte Brontë, offering insights into her life, family background, and literary career.",
                         pages: "624"
                     }
-                ]
+                ],
+            drama: [
+                    {
+                        title: "Wonderful Adventures of Mrs. Seacole in Many Lands: Top Crime Story",
+                        author: "Seacole, Mary",
+                        publicationDate: "1857",
+                        summary: "Seacole offers a captivating narrative, blending elements of adventure and crime, making it a top choice for readers seeking thrilling tales.",
+                        pages: "240"
+                    },
+                    {
+                        title: "The Painter Of Modern Life",
+                        author: "Baudelaire, Charles",
+                        publicationDate: "1863",
+                        summary: "Baudelaire presents a profound exploration of modernity through the lens of art, offering insightful reflections on contemporary society and culture.",
+                        pages: "143"
+                    }
+                ],
+            mystery: [
+                {
+                    title: "The Memoirs of Detective Vidocq: Convict, Spy and Principal Agent of the French Police",
+                    author: "Francois Vidocq, Eugene",
+                    publicationDate: "1828",
+                    summary: "Vidocq's memoirs recount his experiences as a criminal turned detective and offer insights into early police work.",
+                    pages: "240"
+                },
+                {
+                    title: "The Memoirs of Detective Vidocq: Convict, Spy and Principal Agent of the French Police",
+                    author: "Hayward, Arthur",
+                    publicationDate: "1874",
+                    summary: "This early work profiles various criminals and their crimes, providing insights into criminal behavior and the justice system of the time.",
+                    pages: "504"
+                }
+            ],
+            adventure: [
+                {
+                    title: "The Adventures of a Forty-Niner",
+                    author: "Knower, Daniel",
+                    publicationDate: "1894",
+                    summary: "Knower's memoir recounts his experiences as a gold prospector during the California Gold Rush, offering insights into the challenges and dangers faced by miners during that time.",
+                    pages: "120"
+                },
+                {
+                    title: "he Journals of Lewis and Clark",
+                    author: "Lewis and Clark",
+                    publicationDate: "1806",
+                    summary: "These journals document the famous expedition to explore the American West, providing insights into the landscapes, peoples, and wildlife encountered during their journey.",
+                    pages: "1492"
+                }
+
+            ]
             },
     fiction: {
             drama: [

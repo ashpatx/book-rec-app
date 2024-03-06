@@ -6,21 +6,19 @@ import { BOOKS } from '../utils/books';
  * @param {Object} args - User inputs including selectedCategory, selectedGenre, and length.
  * @returns {Object} - Random book recommendation object.
  */
-export function generateRecommendation(selectedCategory, selectedGenre) {
-    // Filter books based on selected category and genre
-    const filteredBooks = BOOKS[selectedCategory][selectedGenre];
+export function generateRecommendation(selectedCategory, selectedGenre, selectedLength) {
+    // Filter books based on selectedCategory and selectedGenre
+    const filteredByCategory = BOOKS[selectedCategory][selectedGenre];
 
-    // Filter books based on page count (> 259 pages)
-    const filteredByPageCount = filteredBooks.filter(book => parseInt(book.pages) > 259);
+    // Filter books based on selectedLength
+    const filteredByLength = filteredByCategory.filter(book => {
+        const pages = parseInt(book.pages);
+        return selectedLength === 'short' ? pages < 259 : pages > 259;
+    });
 
-    // Check if there are any books left after filtering
-    if (filteredByPageCount.length === 0) {
-        throw new Error('No books matching the criteria');
-    }
-
-    // Select a random book from the filtered list
-    const randomIndex = Math.floor(Math.random() * filteredByPageCount.length);
-    const randomBook = filteredByPageCount[randomIndex];
+    // Randomly select a book from the filtered list
+    const randomIndex = Math.floor(Math.random() * filteredByLength.length);
+    const randomBook = filteredByLength[randomIndex];
 
     return randomBook;
 }

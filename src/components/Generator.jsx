@@ -19,6 +19,7 @@ function Header(props) {
 
 export default function Generator(props) {
   const { selectedCategory, setSelectedCategory, selectedGenre, setSelectedGenre, length, setLength, updateRecommendation } = props
+  const { scrollToRecommendation }= props
 
   const [showModal, setShowModal] = useState(false)
 
@@ -65,8 +66,9 @@ const [isSelected, setIsSelected] = useState(false);
 
     const handleClick = () => {
         setIsSelected(!isSelected);
+        updateRecommendation();
+        scrollToRecommendation();
     };
-
 
 
   return (
@@ -138,12 +140,13 @@ const [isSelected, setIsSelected] = useState(false);
 ))}
             </div>
 
-            <GoButton  
-            func={updateRecommendation}
-            buttonText={'Generate'} 
-            isSelected={isSelected}
-            onClick={handleClick}
-            />
+            <GoButton
+                    buttonText="Generate"
+                    onClick={updateRecommendation}
+                    isSelected={false}
+                    scrollTo={true}
+                    scrollToFunc={scrollToRecommendation}
+                />
             
     </SectionWrapper>
   )

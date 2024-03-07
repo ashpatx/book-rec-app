@@ -4,11 +4,11 @@ export default function SectionWrapper(props) {
     const {children, header, title} = props
   return (
     <section className='min-h-screen flex flex-col justify-center items-center gap-6'>
-        <div className='py-10 flex flex-col gap-4 justify-center items-center'>
+        <div className='text-xl flex flex-col justify-center items-center mb-4'>
             <p>{header}</p>
-            <h2>{title[0]} <span>{title[1]}</span> <span>{title[2]}</span> <span>{title[3]}</span></h2>
+            <h2><span>{title[0]}</span> <span>{title[1]}</span> <span>{title[2]}</span> <span>{title[3]}</span></h2>
         </div>
-        <div className='flex flex-col items-center gap-4'> 
+        <div className='w-full flex flex-col items-center gap-6'> 
 
         {children}
         </div>

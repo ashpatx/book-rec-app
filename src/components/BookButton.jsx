@@ -2,7 +2,7 @@ import React from 'react';
 
 function BookCategoryButton({ buttonText, onClick, isSelected }) {
     const handleClick = () => {
-        onClick(buttonText); // Pass the buttonText to the parent onClick handler
+        onClick(buttonText); //Pass the buttonText to the parent onClick handler
     };
 
     return (

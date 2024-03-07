@@ -10,7 +10,7 @@ export default function Hero() {
     };
 
     return (
-        <div className='text-slate-900'>
+        <div className='min-h-screen flex flex-col justify-center text-slate-900'>
             <div className='flex flex-col mb-4'>
             <p className='sm:text-2xl md:text-3xl lg:text-4xl'>It's time to read</p>
             <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold'>a <span>Classic</span></h1>

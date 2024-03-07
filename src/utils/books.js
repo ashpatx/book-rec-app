@@ -179,7 +179,7 @@ export const BOOKS = {
                         author: "Defoe, Daniel",
                         publicationDate: "1719",
                         summary: "A fictionalized autobiography of Robinson Crusoe, a castaway who spends years on a deserted island. Defoe's narrative explores themes of survival, self-reliance, and redemption, inspired by real-life accounts of shipwrecks and survival.",
-                        pages: "200-250 pages"
+                        pages: "194"
                     },
                     {
                         title: "Walden, and On The Duty Of Civil Disobedience",

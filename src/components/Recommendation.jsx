@@ -13,5 +13,6 @@ export default function Recommendation(props) {
         ))}
       </div>
     </SectionWrapper>
+   
   );
 }

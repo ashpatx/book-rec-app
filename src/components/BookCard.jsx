@@ -41,7 +41,7 @@ export default function BookCard({ book }) {
           <p>Description: {summary}</p>
         </div>
       </div>
-      <div className='fixed bottom-0 flex items-center justify-center text-slate-900'>
+      <div className='absolute left-10 bottom-2 flex items-center justify-center text-slate-900'>
         <p className="text-md">Happy Reading 📚 Made by <a href="https://twitter.com/ashpatx" className='text-pink-700'>@ashpatx</a></p>
       </div>
     </div>
